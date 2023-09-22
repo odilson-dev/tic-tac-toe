@@ -15,3 +15,9 @@ class Board
       puts "      #{@board[7]} | #{@board[8]} | #{@board[9]}"
   end
 end
+class Player
+    def initialize(name, player_symbol)
+        @name = name
+        @player_symbol = player_symbol
+    end
+end
