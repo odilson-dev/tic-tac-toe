@@ -1,5 +1,6 @@
 require_relative "lib/board.rb"
 require_relative "lib/player.rb"
+require 'colorize'
 
 
 puts "Player 1 >>> Enter your name:"
@@ -9,7 +10,7 @@ while true do
     puts "Player 1 >>> Enter any character as your piece:"
     piece = gets.chomp
     if piece.length > 1
-        puts "You should type one character as your piece"
+        puts "You should type one character as your piece".red
         redo
     else
         break
@@ -24,10 +25,10 @@ while true do
     puts "It should not be same as #{player_1.name}'s piece"
     piece = gets.chomp
     if piece.length > 1
-        puts "You should type one character as your piece"
+        puts "You should type one character as your piece".red
         redo
     elsif piece == player_1.piece
-        puts "Your piece should not be same as #{player_1.name}'s piece"
+        puts "Don't choose the same piece as #{player_1.name}".red
         redo
     else
         break
@@ -35,15 +36,17 @@ while true do
 end
 player_2 = Player.new(name, piece)
 
+puts "Good, let's play the Tic Tac Toe Game now \u{1f929}!!!\n".blue
+
 Board.show_board
 
 while true do
     if player_1.play
-        puts "#{player_1.name} won"
+        puts "Congratulations #{player_1.name}, you won!".upcase.green
         break
     end
     if player_2.play
-        puts "#{player_2.name} won"
+        puts "Congratulations #{player_2.name}, you won!".upcase.green
         break
     end
 

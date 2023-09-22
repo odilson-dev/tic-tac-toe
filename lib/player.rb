@@ -8,7 +8,7 @@ class Player
     end
 
     def play()
-        puts "#{@name} -"
+        puts "\n#{@name} -"
         puts "What is the number where you want to put your piece?"
         number = gets.chomp
         Board.set_board(number, self)
