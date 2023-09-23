@@ -42,11 +42,11 @@ Board.show_board
 
 while true do
     if player_1.play
-        puts "Congratulations #{player_1.name}, you won!".upcase.green
+        puts "Congratulations #{player_1.name}, you won!!!".upcase.green
         break
     end
     if player_2.play
-        puts "Congratulations #{player_2.name}, you won!".upcase.green
+        puts "Congratulations #{player_2.name}, you won!!!".upcase.green
         break
     end
 
