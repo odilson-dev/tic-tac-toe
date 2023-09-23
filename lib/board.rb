@@ -3,14 +3,15 @@ def verify(elem1, elem2, elem3)
 end
 
 class Board
-  
-  @@board = {
-    1 => 1, 2 => 2, 3 => 3,
-    4 => 4, 5 => 5, 6 => 6,
-    7 => 7, 8 => 8, 9 => 9
-    }
-  @@numbers_already_choosed = []
-  
+  def self.create_board
+    @@board = {
+      1 => 1, 2 => 2, 3 => 3,
+      4 => 4, 5 => 5, 6 => 6,
+      7 => 7, 8 => 8, 9 => 9
+      }
+    @@numbers_already_choosed = []
+  end
+
   def self.numbers_already_choosed
     @@numbers_already_choosed
   end
