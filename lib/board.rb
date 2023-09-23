@@ -9,6 +9,11 @@ class Board
     4 => 4, 5 => 5, 6 => 6,
     7 => 7, 8 => 8, 9 => 9
     }
+  @@numbers_already_choosed = []
+  
+  def self.numbers_already_choosed
+    @@numbers_already_choosed
+  end
 
   def self.show_board
       puts "      #{@@board[1]} | #{@@board[2]} | #{@@board[3]}"
@@ -20,6 +25,7 @@ class Board
 
   def self.set_board(number, player)
     @@board[number.to_i] = player.piece
+    @@numbers_already_choosed << number
   end
 
   def self.check_victory
