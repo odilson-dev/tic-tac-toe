@@ -1,4 +1,5 @@
 require_relative '../lib/board'
+require_relative '../lib/player'
 
 describe verify('X', 'X', 'X') do
   context "when the board reads X X X across one row, columns or diagonal" do
@@ -60,6 +61,34 @@ describe Board do
         context "returns True because there is three elements on a row, a column or diagonal which same" do
             it "returns True that means someone wins" do
                 expect(Board.check_victory).to be true
+            end
+        end
+    end
+
+    describe "We test the #set_board method, when a player plays so the board can change" do 
+        before do
+            class Board
+                def self.create_board
+                    @@board = {
+                    1 => 1, 2 => 2, 3 => 3,
+                    4 => 4, 5 => 5, 6 => 6,
+                    7 => 7, 8 => 8, 9 => 9
+                    }
+                    @@numbers_already_choosed = []
+                end
+                def self.board
+                    @@board
+                end
+            end
+            Board.create_board
+        end
+        context "Tom will play and change the third element on the board to his own piece" do
+            
+            it "#set_board method changes the third element on the board to Tom's piece" do
+            # We create an Player instance called Tom
+            # The first argument is Tom's name and the second one is Tom's piece
+            tom = Player.new("Tom", "X")
+            expect { Board.set_board(3, tom) }.to change { Board.board[3] }.from(3).to("X")
             end
         end
     end
