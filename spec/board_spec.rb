@@ -93,3 +93,28 @@ describe Board do
         end
     end
 end
+describe "#is_digit?" do
+    describe "The method #is_digit? returns true if the string given in argument is a digit or not" do
+
+        context "When we pass a valid string digit in parameter" do
+            it "returns true, because '3' is a valid string digit" do
+                valid_digit = '3'
+                expect(is_digit?(valid_digit)).to be true
+            end
+        end
+
+        context "When we pass a invalid digit in parameter" do
+            it "returns false because 8 is a Integer not a string digit" do
+                invalid_digit = 8
+                expect(is_digit?(invalid_digit)).to be false
+            end
+        end
+
+        context "When we pass a letter in parameter" do
+            it "returns false because letter isn't a digit" do
+                letter = 'K'
+                expect(is_digit?(letter)).to be false
+            end
+        end
+    end
+end

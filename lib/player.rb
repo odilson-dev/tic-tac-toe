@@ -3,7 +3,7 @@ def is_digit?(s)
     code = s.ord
     # 48 is ASCII code of 0
     # 57 is ASCII code of 9
-    48 <= code && code <= 57
+    48 <= code ? code <= 57 : false
 end
 
 class Player
@@ -38,3 +38,5 @@ class Player
         Board.check_victory
     end
 end
+
+puts 12.ord.class
